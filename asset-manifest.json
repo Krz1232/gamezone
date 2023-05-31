@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/gamezone/static/css/main.7c967337.css",
-    "main.js": "/gamezone/static/js/main.4e2d4483.js",
+    "main.css": "/gamezone/static/css/main.b8cfd96d.css",
+    "main.js": "/gamezone/static/js/main.dad4dacf.js",
     "static/media/FontsFree-Net-Catesque-Medium.ttf": "/gamezone/static/media/FontsFree-Net-Catesque-Medium.640a5ba0769a79e709f3.ttf",
     "static/media/star.png": "/gamezone/static/media/star.618d11e122cbca3f8e9e.png",
     "static/media/steam.png": "/gamezone/static/media/steam.9f52e2761c12d6832674.png",
     "static/media/xbox.png": "/gamezone/static/media/xbox.e26cbec468319090b7ea.png",
     "index.html": "/gamezone/index.html",
-    "main.7c967337.css.map": "/gamezone/static/css/main.7c967337.css.map",
-    "main.4e2d4483.js.map": "/gamezone/static/js/main.4e2d4483.js.map"
+    "main.b8cfd96d.css.map": "/gamezone/static/css/main.b8cfd96d.css.map",
+    "main.dad4dacf.js.map": "/gamezone/static/js/main.dad4dacf.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c967337.css",
-    "static/js/main.4e2d4483.js"
+    "static/css/main.b8cfd96d.css",
+    "static/js/main.dad4dacf.js"
   ]
 }
