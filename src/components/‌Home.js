@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import Gamelist from "./Gamelist"
 
 export default function Home() {

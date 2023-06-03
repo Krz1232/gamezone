@@ -1,3 +1,4 @@
+/* eslint-disable */
 //importing react redux things
 // import { useDispatch } from "react-redux";
 

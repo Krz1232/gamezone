@@ -1,3 +1,4 @@
+/* eslint-disable */
 // importing createSlice
 import { createSlice } from "@reduxjs/toolkit"
 

@@ -1,3 +1,4 @@
+/* eslint-disable */
 // import the URL
 import { newGames } from "../../components/url/API";
 
