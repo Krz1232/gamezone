@@ -37,7 +37,7 @@ const nextDate = `${year+1}-${month}-${day}`
 const key = `key=ea622b8db0a042ed9469d92390740884`;
 
 // Games To get
-const size = "page_size=1000"
+const size = "page_size=40"
 
 
 // get Popular games since last year

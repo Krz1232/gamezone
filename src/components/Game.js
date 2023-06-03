@@ -9,7 +9,7 @@ export default function Game({name, onClick ,genres, date, img}) {
         <div className='detail'>
             <h3>{name}</h3>
             <p>Released Date: <span> {date}</span></p>
-            <p className='last'>Genres: <span> {` ${genres} `} </span></p>
+            <p className='last'>Genres: <span> {` ${genres.slice(0,3)} `} </span></p>
         </div>
     </div>
   )

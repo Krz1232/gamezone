@@ -13,20 +13,22 @@ import { useEffect } from 'react';
 // import react-router
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import RootLayout from '../Layouts/RootLayout';
-import Home from './‌Home';
+import Home from "./‌Home.js"
 import GameDetail, { gameDetailLoader } from './GameDetail';
+import Error from './Error';
 
 // Routing
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route index element={<Home />} />
+    <Route path="/gamezone" element={<RootLayout />}>
+      <Route exact index element={<Home />} />
       <Route 
-        path=":text"
+        path="/gamezone/:text"
         element={<GameDetail />}
         loader={gameDetailLoader}
       />
+    <Route path='*' element={<Error />} />
     </Route>
   )
 )

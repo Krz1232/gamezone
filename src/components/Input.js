@@ -39,15 +39,20 @@ export default function Input() {
     <div id="root-input">
          <div className='input-holder'>
             <input type='text' placeholder='Search...' value={inputValue} onChange={handleFilterData} />
-            <i class="fa-solid fa-magnifying-glass" style={{color: "white"}}></i>
+            <i className="fa-solid fa-magnifying-glass" style={{color: "white"}}></i>
         </div>
         {filterData.length !== 0 &&  
         <div className='hidden-filter'>
-            {filterData.map(data => {
+            {filterData.length > 0 && filterData.map(data => {
               return (
                 <div className='each-data'>
                   <img src={data.background_image} alt={data.slug} />
-                  <Link className='linkto' to={data.slug} onClick={handleErase}>{data.name}</Link>
+                  <Link className='linkto' to={data.slug} onClick={handleErase}>
+                    <div className='searchShow'>
+                      <p>{data.name}</p>
+                      <span>({data.released})</span>
+                    </div>
+                  </Link>
                 </div>
               )
             })}

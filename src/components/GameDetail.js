@@ -19,6 +19,7 @@ export default function GameDetail() {
     const { text } = useParams();
     const {detail, screenshot} = useLoaderData();
 
+
     // function to return platform imgs
     const getPlatofmrImages = (text) => {
       switch (text) {
@@ -69,20 +70,18 @@ export default function GameDetail() {
           <div className='more-detail'>
             <div className='platforms'>
               <h2>Platforms</h2><br />
-              {detail.parent_platforms.map(platform => (
+              {detail.parent_platforms && detail.parent_platforms.map(platform => (
                 <img key={platform.platform.name} src={getPlatofmrImages(platform.platform.slug)} alt='img'/>
               ))}
             </div>
 
-            {detail.platforms[1].requirements.minimum && 
-             <div className='requirements'>
-              <h2>System Requirements</h2>
-              <p>{detail.platforms[1].requirements.minimum}</p>
-              <p>{detail.platforms[1].requirements.recommended}</p>
-            </div> }
+            {detail.platforms && detail.platforms[1] && detail.platforms[1].requirements && detail.platforms[1].requirements.minimum ?
+               <div className='requirements'>
+               <h2>System Requirements</h2>
+               <p>{detail.platforms[1].requirements.minimum}</p>
+               <p>{detail.platforms[1].requirements.recommended}</p>
+               </div> : <div className='requirements'> <h2>No System Requirements</h2></div>}
           </div>
-
-
       </div>
 
 
@@ -97,7 +96,7 @@ export default function GameDetail() {
         <div id='screenshoots-view'>
           <h2>Screenshoots</h2>
           <div className='screenshots-container'>
-            {screenshot && screenshot.results.slice(0,4).map(screenshot => {
+            {screenshot.results && screenshot.results.slice(0, 4).map(screenshot => {
               return (
                 <img key={screenshot.id} src={screenshot.image} alt={detail.name} />
               )
@@ -122,7 +121,5 @@ export const gameDetailLoader = async ({params}) => {
     return {
       detail: data1,
       screenshot: data2
-    }
-
-    
+    }  
 }

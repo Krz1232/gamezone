@@ -36,12 +36,12 @@ export default function Gamelist() {
     {popIsLoading === true ?  <h1 className='titles first'>Loading...</h1> : <h1 className='titles first'>Popular Games</h1>}
      {!popIsLoading && 
       <div className='gameView'>
-      {popular && popular.slice(0, visible ? 999 : 3).map( (game,index) => (
+      {popular.length > 0 ? popular.slice(0, visible ? 40 : 3).map( (game,index) => (
           <Link to={game.slug.toString()} key={game.id}>
-          <Game key={index} date={game.released} name={game.name} genres={game.genres.map((game,index) => game.name)} img={game.background_image} />
+          <Game key={index} date={game.released} name={game.name} genres={game.genres && game.genres.map((game,index) => game.name)} img={game.background_image} />
           </Link>
-        ))}
-        <span className="loadMore" onClick={load_more_popular}><i class={ visible ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"} style={{color: "#B0DAFF"}}></i></span>
+        )) : ""}
+        <span className="loadMore" onClick={load_more_popular}><i className={ visible ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"} style={{color: "#B0DAFF"}}></i></span>
       </div> 
     } </div>}
     
@@ -51,12 +51,12 @@ export default function Gamelist() {
      {newIsLoading ?  " " : <h1 className='titles'>New Games</h1>}
      {!newIsLoading && 
       <div className='gameView'>
-      {new_games && new_games.slice(0, show ? 999 : 3).map( (game,index) => (
+      {new_games.length > 0 ? new_games.slice(0, show ? 40 : 3).map( (game,index) => (
           <Link to={game.slug.toString()} key={game.id}>
-          <Game key={index} date={game.released} name={game.name} genres={game.genres.map((game,index) => game.name)} img={game.background_image} />
+          <Game key={index} date={game.released} name={game.name} genres={game.genres && game.genres.map((game,index) => game.name)} img={game.background_image} />
           </Link>
-        ))}
-        <span className="loadMore" onClick={load_more_new_games}><i class={ show ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"} style={{color: "#B0DAFF"}}></i></span>
+        )) : ""}
+        <span className="loadMore" onClick={load_more_new_games}><i className={ show ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"} style={{color: "#B0DAFF"}}></i></span>
       </div> 
     } </div>}
 
@@ -66,12 +66,12 @@ export default function Gamelist() {
      {newIsLoading ?  " " : <h1 className='titles'>Up-Coming Games</h1>}
      {!upIsLoading && 
       <div className='gameView'>
-      {up_coming && up_coming.slice(0, add ? 999 : 3).map( (game,index) => (
+      {up_coming.length > 0 && up_coming.slice(0, add ? 40 : 3).map( (game,index) => (
             <Link to={game.slug.toString()} key={game.id}>
-            <Game key={index} date={game.released} name={game.name} genres={game.genres.map((game,index) => game.name)} img={game.background_image} />
+            <Game key={index} date={game.released} name={game.name} genres={game.genres && game.genres.map((game,index) => game.name)} img={game.background_image} />
             </Link>
         ))}
-        <span className="loadMore" onClick={load_more_up_coming}><i class={ add ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"} style={{color: "#B0DAFF"}}></i></span>
+        <span className="loadMore" onClick={load_more_up_coming}><i className={ add ? "fa-solid fa-chevron-up" : "fa-solid fa-chevron-down"} style={{color: "#B0DAFF"}}></i></span>
       </div> 
     } </div>}
     </div>
