@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/gamezone/static/css/main.151d0e1d.css",
-    "main.js": "/gamezone/static/js/main.dad4dacf.js",
-    "static/media/star.png": "/gamezone/static/media/star.618d11e122cbca3f8e9e.png",
-    "static/media/steam.png": "/gamezone/static/media/steam.9f52e2761c12d6832674.png",
-    "static/media/xbox.png": "/gamezone/static/media/xbox.e26cbec468319090b7ea.png",
-    "index.html": "/gamezone/index.html",
-    "main.151d0e1d.css.map": "/gamezone/static/css/main.151d0e1d.css.map",
-    "main.dad4dacf.js.map": "/gamezone/static/js/main.dad4dacf.js.map"
+    "main.css": "/static/css/main.151d0e1d.css",
+    "main.js": "/static/js/main.b3b15c32.js",
+    "static/media/star.png": "/static/media/star.618d11e122cbca3f8e9e.png",
+    "static/media/steam.png": "/static/media/steam.9f52e2761c12d6832674.png",
+    "static/media/xbox.png": "/static/media/xbox.e26cbec468319090b7ea.png",
+    "index.html": "/index.html",
+    "main.151d0e1d.css.map": "/static/css/main.151d0e1d.css.map",
+    "main.b3b15c32.js.map": "/static/js/main.b3b15c32.js.map"
   },
   "entrypoints": [
     "static/css/main.151d0e1d.css",
-    "static/js/main.dad4dacf.js"
+    "static/js/main.b3b15c32.js"
   ]
 }
