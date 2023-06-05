@@ -43,8 +43,9 @@ const size = "page_size=40"
 
 // get Popular games since last year
 const popular_games = `${BASE_URL}games?dates=${lastDate},${currentDate}&${key}&${size}&ordering=-rating`;
-const up_coming_games = `${BASE_URL}games?dates=${currentDate},${nextDate}&${key}&${size}&ordering=-added`;
-const newGames = `${BASE_URL}games?dates=${lastDate},${currentDate}&${key}&${size}&ordering=-release`;
+const up_coming_games = `${BASE_URL}games?dates=${currentDate},${nextDate}&${key}&${size}`;
+const newGames = `${BASE_URL}games?dates=${lastDate},${currentDate}&${key}&${size}`;
+const searchGameURL = (game_name) => `${BASE_URL}games?search=${game_name}&${key}`;
 
 
-export { popular_games, up_coming_games, newGames }
+export { popular_games, up_coming_games, newGames, searchGameURL }

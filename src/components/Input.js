@@ -2,53 +2,55 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { searchGameURL } from './url/API';
 
 export default function Input() {
 
   const [filterData, setFilterData] = useState([]);
-  const [inputValue, setInputValue] = useState();
+  const [inputValue, setInputValue] = useState("");
+  const [type, setType] = useState();
 
-  const {popIsLoading, popular, popError} = useSelector( state => state.popular);
-  const {newIsLoading, new_games, newError} = useSelector( state => state.new_games);
-  const {upIsLoading, up_coming, upError} = useSelector( state => state.up_coming);
-
-  const datas = [
-    ...popular,
-    ...new_games,
-    ...up_coming
-  ]
 
   const handleFilterData = (e) => {
     const value = e.target.value;
-    const SearchedName = datas.filter(data => {
-      return data.name.toLowerCase().includes(value.toLowerCase())
-    })
+
     if(value.length !== 0) {
-      setFilterData(SearchedName);
+      setInputValue(value);
     }  else {
+      setInputValue("");
+    }
+    setType()
+  }
+
+  useEffect(() => {
+    if(inputValue) {
+      fetch(searchGameURL(inputValue))
+      .then( response => response.json())
+      .then( data => {setFilterData(data.results)})
+      .catch( err => { throw Error(err) })
+    } else {
       setFilterData([]);
     }
-    setInputValue()
-  }
+  }, [inputValue])
 
   const handleErase = () => {
     setFilterData([])
-    setInputValue("")
+    setType("")
   }
 
   return (
     <div id="root-input">
          <div className='input-holder'>
-            <input type='text' placeholder='Search...' value={inputValue} onChange={handleFilterData} />
+            <input type='text' placeholder='Search...' value={type} onChange={handleFilterData} />
             <i className="fa-solid fa-magnifying-glass" style={{color: "white"}}></i>
         </div>
-        {filterData.length !== 0 &&  
+        {filterData.length > 0 &&  
         <div className='hidden-filter'>
-            {filterData.length > 0 && filterData.map(data => {
-              return (
-                <div className='each-data'>
+            {filterData.map(data => (
+                <div className='each-data' key={data.id}>
                   <img src={data.background_image} alt={data.slug} />
-                  <Link className='linkto' to={data.slug} onClick={handleErase}>
+                  <Link className='linkto' to={`gamezone/` + data.slug} onClick={handleErase}>
                     <div className='searchShow'>
                       <p>{data.name}</p>
                       <span>({data.released})</span>
@@ -56,7 +58,7 @@ export default function Input() {
                   </Link>
                 </div>
               )
-            })}
+            )}
         </div>
         }
     </div>

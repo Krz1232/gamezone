@@ -38,7 +38,7 @@ export default function Gamelist() {
      {!popIsLoading && 
       <div className='gameView'>
       {popular.length > 0 ? popular.slice(0, visible ? 40 : 3).map( (game,index) => (
-          <Link to={game.slug.toString()} key={game.id}>
+          <Link to={`gamezone/` + game.slug.toString()} key={game.id}>
           <Game key={index} date={game.released} name={game.name} genres={game.genres && game.genres.map((game,index) => game.name)} img={game.background_image} />
           </Link>
         )) : ""}
@@ -53,7 +53,7 @@ export default function Gamelist() {
      {!newIsLoading && 
       <div className='gameView'>
       {new_games.length > 0 ? new_games.slice(0, show ? 40 : 3).map( (game,index) => (
-          <Link to={game.slug.toString()} key={game.id}>
+          <Link to={`gamezone/` + game.slug.toString()} key={game.id}>
           <Game key={index} date={game.released} name={game.name} genres={game.genres && game.genres.map((game,index) => game.name)} img={game.background_image} />
           </Link>
         )) : ""}
@@ -68,7 +68,7 @@ export default function Gamelist() {
      {!upIsLoading && 
       <div className='gameView'>
       {up_coming.length > 0 && up_coming.slice(0, add ? 40 : 3).map( (game,index) => (
-            <Link to={game.slug.toString()} key={game.id}>
+            <Link to={`gamezone/` + game.slug.toString()} key={game.id}>
             <Game key={index} date={game.released} name={game.name} genres={game.genres && game.genres.map((game,index) => game.name)} img={game.background_image} />
             </Link>
         ))}

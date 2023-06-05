@@ -22,12 +22,13 @@ import Error from './Error';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/gamezone" element={<RootLayout />}>
+    <Route path="/" element={<RootLayout />}>
       <Route exact index element={<Home />} />
       <Route 
         path="/gamezone/:text"
         element={<GameDetail />}
         loader={gameDetailLoader}
+        errorElement={<Error />}
       />
     <Route path='*' element={<Error />} />
     </Route>

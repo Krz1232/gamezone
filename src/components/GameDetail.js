@@ -119,6 +119,10 @@ export const gameDetailLoader = async ({params}) => {
     const [response1, response2] = await Promise.all([request1, request2]);
     const [data1, data2] = await Promise.all([response1.json(), response2.json()]);
 
+    if((!response1.ok && !response2.ok) || (!response1.ok || !response2.ok)) {
+      throw Error("Failed To Fetch")
+    }
+
     return {
       detail: data1,
       screenshot: data2
