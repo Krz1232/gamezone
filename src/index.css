@@ -70,7 +70,7 @@ div#home {
 /* game list view */
 div.gameView {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin: 3rem 0 3rem 0;
   position: relative;
@@ -431,6 +431,7 @@ div.searchShow p {
     margin-bottom: 1rem;
   }
 }
+
 @media (min-width: 650px) {
   div#footer {
     width: 100vw;
