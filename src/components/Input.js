@@ -41,9 +41,9 @@ export default function Input() {
 
   return (
     <div id="root-input">
-         <div className='input-holder'>
-            <input type='text' placeholder='Search...' value={type} onChange={handleFilterData} />
-            <i className="fa-solid fa-magnifying-glass" style={{color: "white"}}></i>
+        <div className='input-holder'>
+          <input type='text' placeholder='Search...' value={type} onChange={handleFilterData} />
+          <i className="fa-solid fa-magnifying-glass" style={{color: "white"}}></i>
         </div>
         {filterData.length > 0 &&  
         <div className='hidden-filter'>
